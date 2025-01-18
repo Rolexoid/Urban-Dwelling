@@ -7,12 +7,12 @@
   <title>Urban-Dwelling</title>
 </head>
 <body>
-  <aside class="aside-container p-header">
+  <aside class="aside-container p-header dark-bg">
     <nav>
-      <ul class="flex-container aside-block">
-        <li><a href="#">Доставка и оплата</a></li>
-        <li><a href="#">Гарантия и возврат</a></li>
-        <li><a href="#">EN</a></li>
+      <ul class="flex-container aside-block ul-no-style">
+        <li><a href="#" class="link-no-style white-text">Доставка и оплата</a></li>
+        <li><a href="#" class="link-no-style white-text">Гарантия и возврат</a></li>
+        <li><a href="#" class="link-no-style white-text">EN</a></li>
       </ul>
     </nav>
   </aside>
@@ -21,7 +21,7 @@
       <img class="logo-size" src="images/Logo.png" alt="logo"/>
     </div>
     <nav class="menu">
-      <ul class="flex-container">
+      <ul class="flex-container ul-no-style">
         <li><a href="#">Каталог</a></li>
         <li><a href="#">О компании</a></li>
         <li><a href="#">Контакты</a></li>
@@ -29,8 +29,8 @@
     </nav>
     <div class="flex-container">
       <div class="input-container">
-        <input class="input-search" placeholder="Лампы"/>
-        <button class="btn-search"></button>
+        <input class="input-search" text="Лампы"/>
+        <button class="input-search-button"></button>
       </div>
       <div class="search-button-container">
         <button class="search-button"></button>
@@ -38,96 +38,180 @@
       <button class="basket">
         Корзина
       </button>
-      <div class="dropdown">
-        <button class="dropdown-btn">
-        </button>
-        <nav class="dropdown-content">
-          <ul>
-            <li><a href="#">Каталог</a></li>
-            <li><a href="#">О компании</a></li>
-            <li><a href="#">Контакты</a></li>
-            <li><a href="#">Найти</a></li>
-            <li><a href="#">Корзина</a></li>
-          </ul>
-        </nav>
-      </div>
+      <button class="hide-menu-btn">
+      </button>
     </div>
   </header>
   <main class="p-main">
     <h1 class="search-title">Результаты поиска</h1>
-    <section class="cards">
-      <div class="card-item">
-        <figure class="m-0">
-          <img class="img-card" src="images/cards/1.png" alt="lamp1"/>
-          <figcaption class="img-card-title">Встраиваемый светильник Markt</figcaption>
-        </figure>
-        <h2 class="price">
-          <span class="orange">3 490 &#8381;</span>&nbsp;&nbsp;&nbsp;
-          <span class="gray"><span class="line-through">5 060</span> &#8381;</span>
-        </h2>
-      </div>
-      <div class="card-item">
-        <figure class="m-0">
-          <img class="img-card" src="images/cards/2.png" alt="lamp2"/>
-          <figcaption class="img-card-title">Линейный светильник ARG</figcaption>
-        </figure>
-        <h2 class="price">6 700 &#8381;</h2>
-      </div>
-      <div class="card-item">
-        <figure class="m-0">
-          <img class="img-card" src="images/cards/3.png" alt="lamp3"/>
-          <figcaption class="img-card-title">Светодиодный светильник</figcaption>
-        </figure>
-        <h2 class="price">
-          <span class="orange">5 060 &#8381;</span>&nbsp;&nbsp;&nbsp;
-          <span class="gray"><span class="line-through">6 060</span> &#8381;</span>
-        </h2>
-      </div>
-      <div class="card-item">
-        <figure class="m-0">
-          <img class="img-card" src="images/cards/1.png" alt="lamp4"/>
-          <figcaption class="img-card-title">Встраиваемый светильник Markt</figcaption>
-        </figure>
-        <h2 class="price">3 490 &#8381;</h2>
-      </div>
-      <div class="card-item">
-        <figure class="m-0">
-          <img class="img-card" src="images/cards/2.png" alt="lamp5"/>
-          <figcaption class="img-card-title">Линейный светильник ARG</figcaption>
-        </figure>
-        <h2 class="price">
-          <span class="orange">6 700 &#8381;</span>&nbsp;&nbsp;&nbsp;
-          <span class="gray"><span class="line-through">6 060</span> &#8381;</span>
-        </h2>
-      </div>
-      <div class="card-item">
-        <figure class="m-0">
-          <img class="img-card" src="images/cards/3.png" alt="lamp6"/>
-          <figcaption class="img-card-title">Светодиодный светильник</figcaption>
-        </figure>
-        <h2 class="price">5 060 &#8381;</h2>
-      </div>
-      <div class="card-item">
-        <figure class="m-0">
-          <img class="img-card" src="images/cards/1.png" alt="lamp7"/>
-          <figcaption class="img-card-title">Встраиваемый светильник Markt</figcaption>
-        </figure>
-        <h2 class="price">
-          <span class="orange">3 490 &#8381;</span>&nbsp;&nbsp;&nbsp;
-          <span class="gray"><span class="line-through">6 060</span> &#8381;</span>
-        </h2>
-      </div>
-      <div class="card-item">
-        <figure class="m-0">
-          <img class="img-card" src="images/cards/2.png" alt="lamp8"/>
-          <figcaption class="img-card-title">Линейный светильник</figcaption>
-        </figure>
-        <h2 class="price">6 700 &#8381;</h2>
-      </div>
+    <section id="search-result">
+      <nav>
+        <ul class="cards ul-no-style">
+          <li class="card-item">
+            <a href="#" class="link-no-style dark-text">
+              <figure class="m-0">
+                <div class="relative-position">
+                  <img class="img-card" src="images/cards/1.png" alt="lamp1"/>
+                  <div class="more-info-container dark-bg">
+                    <button class="more-info-btn white-text orange-bg">Подробнее</button>
+                  </div>
+                </div>
+                <figcaption class="img-card-title">Встраиваемый светильник Markt</figcaption>
+              </figure>
+            </a>
+            <h2 class="price">
+              <span class="orange-text">3 490 &#8381;</span>&nbsp;&nbsp;&nbsp;
+              <span class="gray-text"><span class="line-through">5 060</span> &#8381;</span>
+            </h2>
+          </li>
+          <li class="card-item">
+            <a href="#" class="link-no-style dark-text">
+              <figure class="m-0">
+                <div class="relative-position">
+                  <img class="img-card" src="images/cards/2.png" alt="lamp2"/>
+                  <div class="more-info-container dark-bg">
+                    <button class="more-info-btn white-text orange-bg">Подробнее</button>
+                  </div>
+                </div>
+                <figcaption class="img-card-title">Линейный светильник ARG</figcaption>
+              </figure>
+            </a>
+            <h2 class="price">6 700 &#8381;</h2>
+          </li>
+          <li class="card-item">
+            <a href="#" class="link-no-style dark-text">
+              <figure class="m-0">
+                <div class="relative-position">
+                  <img class="img-card" src="images/cards/3.png" alt="lamp3"/>
+                  <div class="more-info-container dark-bg">
+                    <button class="more-info-btn white-text orange-bg">Подробнее</button>
+                  </div>
+                </div>
+                <figcaption class="img-card-title">Светодиодный светильник</figcaption>
+              </figure>
+            </a>
+            <h2 class="price">
+              <span class="orange-text">5 060 &#8381;</span>&nbsp;&nbsp;&nbsp;
+              <span class="gray-text"><span class="line-through">6 060</span> &#8381;</span>
+            </h2>
+          </li>
+          <li class="card-item">
+            <a href="#" class="link-no-style dark-text">
+              <figure class="m-0">
+                <div class="relative-position">
+                  <img class="img-card" src="images/cards/1.png" alt="lamp1"/>
+                  <div class="more-info-container dark-bg">
+                    <button class="more-info-btn white-text orange-bg">Подробнее</button>
+                  </div>
+                </div>
+                <figcaption class="img-card-title">Встраиваемый светильник Markt</figcaption>
+              </figure>
+            </a>
+            <h2 class="price">3 490 &#8381;</h2>
+          </li>
+          <li class="card-item">
+            <a href="#" class="link-no-style dark-text">
+              <figure class="m-0">
+                <div class="relative-position">
+                  <img class="img-card" src="images/cards/2.png" alt="lamp5"/>
+                  <div class="more-info-container dark-bg">
+                    <button class="more-info-btn white-text orange-bg">Подробнее</button>
+                  </div>
+                </div>
+                <figcaption class="img-card-title">Линейный светильник ARG</figcaption>
+              </figure>
+            </a>
+            <h2 class="price">
+              <span class="orange-text">6 700 &#8381;</span>&nbsp;&nbsp;&nbsp;
+              <span class="gray-text"><span class="line-through">6 060</span> &#8381;</span>
+            </h2>
+          </li>
+          <li class="card-item">
+            <a href="#" class="link-no-style dark-text">
+              <figure class="m-0">
+                <div class="relative-position">
+                  <img class="img-card" src="images/cards/3.png" alt="lamp6"/>
+                  <div class="more-info-container dark-bg">
+                    <button class="more-info-btn white-text orange-bg">Подробнее</button>
+                  </div>
+                </div>
+                <figcaption class="img-card-title">Светодиодный светильник</figcaption>
+              </figure>
+            </a>
+            <h2 class="price">5 060 &#8381;</h2>
+          </li>
+          <li class="card-item">
+            <a href="#" class="link-no-style dark-text">
+              <figure class="m-0">
+                <div class="relative-position">
+                  <img class="img-card" src="images/cards/1.png" alt="lamp7"/>
+                  <div class="more-info-container dark-bg">
+                    <button class="more-info-btn white-text orange-bg">Подробнее</button>
+                  </div>
+                </div>
+                <figcaption class="img-card-title">Встраиваемый светильник Markt</figcaption>
+              </figure>
+            </a>
+            <h2 class="price">
+              <span class="orange-text">3 490 &#8381;</span>&nbsp;&nbsp;&nbsp;
+              <span class="gray-text"><span class="line-through">6 060</span> &#8381;</span>
+            </h2>
+          </li>
+          <li class="card-item">
+            <a href="#" class="link-no-style dark-text">
+              <figure class="m-0">
+                <div class="relative-position">
+                  <img class="img-card" src="images/cards/2.png" alt="lamp8"/>
+                  <div class="more-info-container dark-bg">
+                    <button class="more-info-btn white-text orange-bg">Подробнее</button>
+                  </div>
+                </div>
+                <figcaption class="img-card-title">Линейный светильник</figcaption>
+              </figure>
+            </a>
+            <h2 class="price">6 700 &#8381;</h2>
+          </li>
+        </ul>
+      </nav>
     </section>
   </main>
-  <footer>
+  <footer class="p-main dark-bg white-text">
+    <section class="footer-container">
+      <div class="grid-logo">
+        <img class="footer-logo" src="images/Logo-light.png" alt="logo"/>
+      </div>
+      <div class="grid-adress">
+        <h3>Адрес</h3>
+        <p>Текст, Текст, Текст</p>
+      </div>
+      <div class="grid-service">
+        <h3>Услуги</h3>
+        <ul class="ul-no-style">
+          <li><a href="#" class="link-no-style white-text">Каталог</a></li>
+          <li><a href="#" class="link-no-style white-text">О компании</a></li>
+          <li><a href="#" class="link-no-style white-text">Контакты</a></li>
+          <li><a href="#" class="link-no-style white-text">Доставка и оплата</a></li>
+          <li><a href="#" class="link-no-style white-text">Гарантия и возврат</a></li>
+        </ul>
+      </div>
+      <div class="grid-public">
+        <p>Публичная оферта</p>
+        <p>Политика персональных данных</p>
+      </div>
+      <div class="grid-description">
+        <p>Этот сайт защищен от спама службой reCAPTCHA Google. <a href="#" class="link-footer">Политика конфиденциальности/Условия предоставления услуг</a></p>
+      </div>
+      <div class="grid-contact">
+        <h3>Контакты</h3>
+        <p>Email: urban.dwelling@yandex.com</p>
+        <p>Телефон: 8 (999) 999-99-99</p>
+      </div>
+      <div class="grid-bank">
+        <img src="images/bank.svg" alt="bank"/>
+      </div>
+    </section>
 
+    
   </footer>
 </body>
 </html>

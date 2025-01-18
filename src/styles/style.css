@@ -8,11 +8,18 @@
   src: url("../fonts/korataki.otf");
 }
 
+:root {
+  --dark-main: #231815;
+  --orange: #e45302;
+  --light-gray: #808080;
+  --light: #f5f5f5;
+  --orange-hover: #EA7600;
+}
 
 body {
   font-size: 16px;
   font-weight: 400;
-  color: #231815;
+  color: var(--dark-main);
   line-height: 1.6em;
   margin: 0;
   font-family: "Lato Regular", sans-serif;
@@ -24,8 +31,14 @@ h1 {
   margin: 0 0 40px;
 }
 
-.search-title {
-  font-size: 44px;
+h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+p {
+  line-height: 1.5em;
+  padding: 20px 0;
 }
 
 .m-0 {
@@ -40,9 +53,52 @@ h1 {
   padding: 60px 260px;
 }
 
+.ul-no-style {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.link-no-style {
+  text-decoration: none;
+}
+
+.white-text {
+  color: white;
+}
+
+.dark-text {
+  color:  var(--dark-main);
+}
+
+.orange-text {
+  color: var(--orange);
+}
+
+.gray-text {
+  color: var(--light-gray);
+}
+
+.dark-bg {
+  background-color: var(--dark-main);
+}
+
+.orange-bg {
+  background-color: var(--orange);
+}
+
+.light-bg {
+  background-color: var(--light);
+}
+
+
+
+.search-title {
+  font-size: 44px;
+}
+
 .aside-container {
   height: 40px;
-  background-color: #231815;
   display: flex;
   justify-content: end;
   box-sizing: border-box;
@@ -54,11 +110,6 @@ h1 {
   line-height: 1.2em;
 }
 
-
-.aside-block a {
-  text-decoration: none;
-  color: white;
-}
 
 .contaner-header {
   position: relative;
@@ -78,9 +129,6 @@ h1 {
   height: 57px;
 }
 
-.flex-container ul {
-  list-style-type: none;
-}
 
 .menu {
   width: 480px;
@@ -99,7 +147,7 @@ h1 {
 
 .menu a {
   text-decoration: none;
-  color: #231815;
+  color: var(--dark-main);
 }
 
 .input-container {
@@ -110,17 +158,12 @@ h1 {
   max-width: 170px;
   height: 40px;
   border-radius: 88px;
-  border: solid #f5f5f5;
+  border: solid var(--light);
   box-sizing: border-box;
   padding-left: 21px;
 }
 
-.input-search::placeholder {
-  color: #231815;
-  font-size: 16px;
-}
-
-.btn-search {
+.input-search-button {
   height: 35px;
   width: 35px;
   margin: 0;
@@ -133,13 +176,14 @@ h1 {
   transform: translateY(-50%);
   border: none;
   background-color: white;
+  cursor: pointer;
 }
 
-.btn-search:hover {
+.input-search-button:hover {
   background-color: #DCDCDC;
 }
 
-.btn-search::before {
+.input-search-button::before {
   content: "";
   background-image: url('../images/search-normal.svg');
   width: 22px;
@@ -163,6 +207,7 @@ h1 {
   border-radius: 50%;
   position: relative;
   box-shadow: 0 2px 10px rgba(0 0 0 / 50%);
+  cursor: pointer;
 }
 
 .search-button::before {
@@ -186,6 +231,7 @@ h1 {
   position: relative;
   margin-left: 20px;
   box-shadow: 0 2px 10px rgba(0 0 0 / 50%);
+  cursor: pointer;
 }
 
 .basket::before {
@@ -209,23 +255,18 @@ h1 {
 
 }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-  display: none;
-  max-height: 40px;
-}
-
-.dropdown-btn {
+.hide-menu-btn {
   width: 40px;
   height: 40px;
   border: none;
   background-color: white;
-  position: relative;
   padding: 0;
+  position: relative;
+  display: none;
+  cursor: pointer;
 }
 
-.dropdown-btn::before {
+.hide-menu-btn::before {
   content: "";
   background-image: url("../images/Menu\ Button.svg");
   position: absolute;
@@ -237,39 +278,8 @@ h1 {
 
 }
 
-.dropdown-btn:hover {
+.hide-menu-btn:hover {
   background-color: #DCDCDC;
-}
-
-.dropdown-content {
-  padding: 12px 16px;
-  display: none;
-  position: absolute;
-  background-color: #F5F5F5;
-  z-index: 1;
-  right: 0;
-  transform: translateX(-50%);
-}
-
-.dropdown-content ul {
-  padding-left: 0;
-}
-
-.dropdown-content a {
-  text-transform: uppercase;
-  float: none;
-  color: black;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: #DCDCDC;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
 }
 
 .cards {
@@ -283,7 +293,7 @@ h1 {
   position: relative;
 }
 
-.cards div:nth-child(odd)::before {
+.cards li:nth-child(odd)::before {
   content: '';
   background-image: url('../images/card-sign.svg');
   width: 126px;
@@ -291,6 +301,7 @@ h1 {
   position: absolute;
   top: 10px;
   left: 10px;
+  z-index: 1;
 }
 
 .img-card {
@@ -312,21 +323,117 @@ h1 {
   line-height: 1.4em;
 }
 
-.orange {
-  color: #e45302;
-}
-
-.gray {
-  color: #808080;
-}
-
 .line-through {
   text-decoration: line-through;
 }
 
+.relative-position {
+  position: relative;
+}
 
+.more-info-container {
+  height: 88px;
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(245 245 245 / 70%);
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.more-info-btn {
+  height: 48px;
+  width: 258px;
+  border: none;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.more-info-btn:hover {
+  background-color: var(--orange-hover);
+}
+
+.card-item a:hover .more-info-container {
+  display: flex;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-areas: "logo adress service public"
+                        "description contact service bank"
+}
+
+.grid-logo {
+  grid-area: logo;
+}
+
+.grid-adress {
+  grid-area: adress;
+}
+
+.grid-service {
+  grid-area: service;
+  justify-self: center;
+}
+
+.grid-public {
+  grid-area: public;
+  color: var(--light-gray);
+  text-align: end;
+}
+
+.footer-container p {
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.grid-description {
+  grid-area: description;
+  color: var(--light-gray);
+  max-width: 322px;
+}
+
+.link-footer {
+  text-decoration: underline;
+  color: var(--light-gray);
+}
+
+.grid-contact {
+  grid-area: contact;
+}
+
+.grid-bank {
+  grid-area: bank;
+  place-self: center end;
+}
+
+.footer-logo {
+  width: 239px;
+}
+
+.grid-service ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.grid-service li {
+  margin-top: 20px;
+}
 
 @media (width >= 1600px) and (width < 1920px) {
+  .input-container {
+    display: none;
+  }
+
+  .search-button-container {
+    display: block;
+  }
+
   .search-title {
     font-size: 40px;
   }
@@ -339,35 +446,43 @@ h1 {
     padding: 60px 180px;
   }
 
-  .input-container {
-    display: none;
-  }
-
-  .search-button-container {
-    display: block;
-  }
-
   .basket {
     margin-left: 23px;
+  }
+
+  .footer-logo {
+    width: 217px;
+  }
+
+  .grid-service {
+    justify-self: start;
   }
 }
 
 
 @media (width >= 770px) and (width < 1600px) {
-  .search-title {
-    font-size: 32px;
-  }
-
   .aside-container {
     display: none;
   }
-
+  
   .input-container {
     display: none;
   }
 
   .search-button-container {
     display: none;
+  }
+
+  .search-title {
+    font-size: 32px;
+  }
+
+  .p-header {
+    padding: 10px 44px;
+  }
+
+  .p-main {
+    padding: 50px 44px;
   }
 
   .basket {
@@ -378,16 +493,8 @@ h1 {
     display: none;
   }
 
-  .dropdown {
+  .hide-menu-btn {
     display: block;
-  }
-
-  .p-header {
-    padding: 10px 44px;
-  }
-
-  .p-main {
-    padding: 50px 44px;
   }
 
   .logo-size {
@@ -406,9 +513,39 @@ h1 {
     width: 320px;
   }
 
+  .footer-logo {
+    width: 180px;
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-areas: "logo logo logo"
+                          "adress contact service"
+                          "public contact service"
+                          "bank description description"                     
+  }
+
+  .grid-description {
+    max-width: 382px;
+    justify-self: end;
+  }
+
+  .grid-public {
+    text-align: start;
+  }
+
+  .grid-bank {
+    justify-self: start;
+  }
+
+  .grid-logo {
+    margin-bottom: 33px;
+  }
+
 }
 
-@media (width < 770px) {
+
+@media (width >= 390px) and (width < 770px) {
   h1 {
     margin: 0 0 24px;
   }
@@ -416,7 +553,7 @@ h1 {
   .search-title {
     font-size: 24px;
   }
-  
+
   .aside-container {
     display: none;
   }
@@ -437,8 +574,118 @@ h1 {
     display: none;
   }
 
-  .dropdown {
+  .p-header {
+    padding: 8px 35px;
+  }
+
+  .p-main {
+    padding: 40px 35px;
+  }
+
+  .logo-size {
+    width: 141px;
+    height: 36px;
+  }
+
+  .hide-menu-btn {
     display: block;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px 0;
+  }
+  
+  .card-item {
+    width: 155px;
+  }
+
+  .img-card-title {
+    margin: 10px 0 11px;
+    height: 51px;
+    overflow: hidden;
+    font-weight: 500;
+  }
+
+  .price {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4em;
+  }
+
+  .cards li:nth-child(odd)::before {
+    display: none;
+  }
+
+  .card-item a:hover .more-info-container {
+    display: none;
+  }
+
+  .footer-logo {
+    width: 180px;
+  }
+
+  .footer-container {
+    display: grid;
+    row-gap: 30px;
+    grid-template-areas: "logo"
+                          "adress"
+                          "contact"
+                          "service"
+                          "public"
+                          "bank"
+                          "description"
+  }
+
+
+  .grid-service {
+    justify-self: start;
+  }
+
+  .grid-bank {
+    justify-self: start;
+    margin-top: 47px;
+  }
+
+  .grid-public {
+    text-align: start;
+  }
+
+  .grid-description {
+    justify-self: start;
+    max-width: 300px;
+  }
+}
+
+@media (width < 390px) {
+  h1 {
+    margin: 0 0 24px;
+  }
+
+  .search-title {
+    font-size: 24px;
+  }
+
+  .aside-container {
+    display: none;
+  }
+
+  .input-container {
+    display: none;
+  }
+
+  .search-button-container {
+    display: none;
+  }
+
+  .basket {
+    display: none;
+  }
+
+  .menu {
+    display: none;
   }
 
   .p-header {
@@ -452,6 +699,10 @@ h1 {
   .logo-size {
     width: 141px;
     height: 36px;
+  }
+
+  .hide-menu-btn {
+    display: block;
   }
 
   .cards {
@@ -478,7 +729,46 @@ h1 {
     line-height: 1.4em;
   }
 
-  .cards div:nth-child(odd)::before {
+  .cards li:nth-child(odd)::before {
     display: none;
+  }
+
+  .card-item a:hover .more-info-container {
+    display: none;
+  }
+
+  .footer-logo {
+    width: 180px;
+  }
+
+  .footer-container {
+    display: grid;
+    row-gap: 30px;
+    grid-template-areas: "logo"
+                          "adress"
+                          "contact"
+                          "service"
+                          "public"
+                          "bank"
+                          "description"
+  }
+
+
+  .grid-service {
+    justify-self: start;
+  }
+
+  .grid-bank {
+    justify-self: start;
+    margin-top: 47px;
+  }
+
+  .grid-public {
+    text-align: start;
+  }
+
+  .grid-description {
+    justify-self: start;
+    max-width: 300px;
   }
 }
