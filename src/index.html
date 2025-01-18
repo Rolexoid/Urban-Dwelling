@@ -17,9 +17,10 @@
     </nav>
   </aside>
   <header class="container-header flex-container p-header">
-    <div>
-      <img class="logo-size" src="images/Logo.png" alt="logo"/>
-    </div>
+    <picture>
+      <source class="logo-size" media="(min-width: 1920px)" srcset="images/Logo.png" alt="logo">
+      <img class="logo-size" src="images/Logo.svg" alt="logo">
+    </picture>
     <nav class="menu">
       <ul class="flex-container ul-no-style">
         <li><a href="#">Каталог</a></li>
